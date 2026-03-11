@@ -1,0 +1,386 @@
+/* ===== RESET & CHUNG ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+body {
+    background: linear-gradient(145deg, #1e2b4f 0%, #2d3f6e 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+}
+
+/* ===== CARD CHÍNH ===== */
+.cv-card {
+    max-width: 1000px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    border-radius: 40px;
+    padding: 32px 28px;
+    box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    
+    /* Hiệu ứng float */
+    animation: float 4s ease-in-out infinite;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cv-card:hover {
+    animation-play-state: paused;
+    transform: scale(1.01) translateY(-5px);
+    box-shadow: 0 40px 60px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* ===== AVATAR ===== */
+.avatar {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(145deg, #4a6cf7, #ff6b6b);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 48px;
+    box-shadow: 0 15px 30px rgba(74, 108, 247, 0.3);
+    animation: rotate-avatar 8s linear infinite;
+}
+
+.avatar:hover {
+    animation-play-state: paused;
+    transform: scale(1.1);
+}
+
+@keyframes rotate-avatar {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ===== TIÊU ĐỀ ===== */
+.name {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #0a2540;
+    margin-bottom: 4px;
+}
+
+.title {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #ff6b6b;
+    margin-bottom: 24px;
+}
+
+/* ===== MỤC TIÊU ===== */
+.objective {
+    background: #f0f4fe;
+    border-radius: 24px;
+    padding: 18px 22px;
+    margin: 20px 0 24px;
+    border-left: 5px solid #4a6cf7;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+}
+
+.objective p {
+    color: #2d3a5e;
+    font-size: 0.98rem;
+    line-height: 1.6;
+}
+
+/* ===== LIÊN HỆ ===== */
+.contact-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 24px;
+    background: #f8faff;
+    border-radius: 40px;
+    padding: 18px 22px;
+    margin-bottom: 32px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #1e2b4f;
+    font-size: 0.98rem;
+    word-break: break-word;
+    flex: 1 1 180px;
+    transition: transform 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.contact-item:hover {
+    transform: translateX(5px);
+    color: #4a6cf7;
+}
+
+.contact-item .icon {
+    font-size: 1.3rem;
+    min-width: 30px;
+}
+
+/* ===== SECTION ===== */
+.section {
+    margin: 36px 0;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0a2540;
+    padding-bottom: 8px;
+    border-bottom: 3px solid #4a6cf7;
+    display: inline-block;
+    margin-bottom: 22px;
+}
+
+/* ===== KINH NGHIỆM & DỰ ÁN ===== */
+.exp-item, .project-item {
+    margin-bottom: 28px;
+    padding: 0 8px;
+}
+
+.exp-header, .project-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.exp-name, .project-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0a2540;
+}
+
+.exp-company, .project-role {
+    background: #eef2ff;
+    color: #4a6cf7;
+    padding: 4px 14px;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.exp-date, .project-date {
+    background: #f1f5f9;
+    color: #64748b;
+    padding: 4px 14px;
+    border-radius: 40px;
+    font-size: 0.85rem;
+}
+
+.exp-desc, .project-desc {
+    color: #334155;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding-left: 18px;
+    border-left: 2px solid #dbe4f0;
+    margin-top: 8px;
+}
+
+/* ===== HỌC VẤN ===== */
+.edu-card {
+    background: #f8fafc;
+    border-radius: 28px;
+    padding: 20px;
+    border: 1px solid #e7edf4;
+    transition: transform 0.2s;
+}
+
+.edu-card:hover {
+    transform: scale(1.02);
+    border-color: #4a6cf7;
+}
+
+.edu-school {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #0b2b4f;
+}
+
+.edu-major {
+    color: #2c3e5c;
+    margin: 6px 0;
+}
+
+.edu-gpa {
+    color: #ff6b6b;
+    font-weight: 600;
+}
+
+/* ===== KỸ NĂNG & CHỨNG CHỈ ===== */
+.skills-grid, .certs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 14px;
+}
+
+.skill-item, .cert-item {
+    background: #f8fafd;
+    padding: 14px 16px;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+    color: #1e293b;
+    border: 1px solid #e7edf4;
+    transition: all 0.2s;
+}
+
+.skill-item:hover, .cert-item:hover {
+    background: #eef2ff;
+    border-color: #4a6cf7;
+    transform: translateY(-3px);
+}
+
+.skill-icon, .cert-icon {
+    background: #d9e2ef;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    color: #1e3a6f;
+}
+
+/* ===== HAI CỘT ===== */
+.row-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin: 30px 0;
+}
+
+/* ===== THÔNG TIN THÊM & SỞ THÍCH ===== */
+.extra-section {
+    background: #f0f4fa;
+    border-radius: 30px;
+    padding: 24px;
+    margin: 30px 0 20px;
+}
+
+.extra-item {
+    margin-bottom: 20px;
+}
+
+.extra-item h4 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1f3a6b;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.extra-item p {
+    color: #2d3958;
+    font-size: 1rem;
+    line-height: 1.6;
+    padding-left: 12px;
+}
+
+.portfolio-link {
+    color: #4a6cf7;
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px dashed #4a6cf7;
+    transition: border-bottom 0.2s;
+}
+
+.portfolio-link:hover {
+    border-bottom: 2px solid #4a6cf7;
+}
+
+/* ===== NÚT LIÊN HỆ ===== */
+.contact-btn {
+    background: linear-gradient(45deg, #4a6cf7, #ff6b6b);
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 60px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    max-width: 280px;
+    margin: 16px auto 10px;
+    display: block;
+    box-shadow: 0 10px 20px rgba(74, 108, 247, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(74, 108, 247, 0.5);
+}
+
+.contact-btn:active {
+    transform: translateY(0);
+}
+
+.contact-btn::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    transition: transform 0.4s, opacity 0.4s;
+}
+
+.contact-btn:active::after {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    transition: 0s;
+}
+
+/* ===== FOOTER ===== */
+.footer-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #8a99b4;
+    margin-top: 28px;
+    border-top: 1px dashed #cbd5e1;
+    padding-top: 18px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 650px) {
+    .cv-card { padding: 24px 18px; }
+    .name { font-size: 1.9rem; }
+    .row-2col { grid-template-columns: 1fr; gap: 20px; }
+    .contact-grid { flex-direction: column; gap: 10px; }
+    .exp-header { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 400px) {
+    .skills-grid, .certs-grid { grid-template-columns: 1fr; }
+    .avatar { width: 80px; height: 80px; font-size: 38px; }
+}
