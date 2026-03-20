@@ -124,7 +124,7 @@ body {
     color: #1e2b4f;
     font-size: 0.98rem;
     word-break: break-word;
-    flex: 1 1 180px;
+    flex: 1 1 18px;
     transition: transform 0.2s, color 0.2s;
     cursor: pointer;
 }
